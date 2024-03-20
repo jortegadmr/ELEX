@@ -14,5 +14,6 @@ public class tipoExpedienteService {
     public ArrayList<tipoExpedienteModel> getTipoExpedientes() {
         return (ArrayList<tipoExpedienteModel>) tipoExpedienteRepository.findAll();
     }
-    }   
+    
+}   
     
