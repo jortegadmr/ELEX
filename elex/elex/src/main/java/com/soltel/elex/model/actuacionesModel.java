@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "actuaciones")
-public class actuaciones {
+public class actuacionesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class actuaciones {
 
     @ManyToOne
     @JoinColumn(name = "codigo_expediente")
-    private expedientes expediente;
+    private expedientesModel expediente;
 
     // Constructor, getters y setters
 
@@ -72,11 +72,11 @@ public class actuaciones {
         this.estado = estado;
     }
 
-    public expedientes getExpediente() {
+    public expedientesModel getExpediente() {
         return expediente;
     }
 
-    public void setExpediente(expedientes expediente) {
+    public void setExpediente(expedientesModel expediente) {
         this.expediente = expediente;
     }
 

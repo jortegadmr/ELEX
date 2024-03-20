@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tipoExpediente")
-public class tipoExpediente {
+public class tipoExpedienteModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +16,8 @@ public class tipoExpediente {
 
     private String nombre;
 
-    // Constructor vacío
-    public tipoExpediente() {
-    }
-
     // Constructor con todos los campos
-    public tipoExpediente(Long id, String nombre) {
+    public tipoExpedienteModel(Long id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }

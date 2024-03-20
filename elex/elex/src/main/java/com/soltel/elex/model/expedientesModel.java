@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "expedientes")
-public class expedientes {
+public class expedientesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
