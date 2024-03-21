@@ -15,6 +15,9 @@ public class tipoExpedienteModel {
     private Long id;
 
     private String nombre;
+    
+    public tipoExpedienteModel() {
+    }
 
     // Constructor con todos los campos
     public tipoExpedienteModel(Long id, String nombre) {
