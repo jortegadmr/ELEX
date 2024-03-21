@@ -1,5 +1,5 @@
 package com.soltel.elex.controller;
 
-public class actuacionesController {
+public class ActuacionesController {
 
 }

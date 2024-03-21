@@ -1,5 +1,5 @@
 package com.soltel.elex.controller;
 
-public class documentosController {
+public class DocumentosController {
 
 }

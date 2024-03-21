@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-public class documentosModel {
+public class DocumentosModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,7 +24,7 @@ public class documentosModel {
     
     @ManyToOne
     @JoinColumn(name = "tipo")
-    private actuacionesModel actuacion;
+    private ActuacionesModel actuacion;
 
     public Long getId() {
         return id;
@@ -66,11 +66,11 @@ public class documentosModel {
         this.fecha = fecha;
     }
 
-    public actuacionesModel getActuacion() {
+    public ActuacionesModel getActuacion() {
         return actuacion;
     }
 
-    public void setActuacion(actuacionesModel actuacion) {
+    public void setActuacion(ActuacionesModel actuacion) {
         this.actuacion = actuacion;
     }
 

@@ -1,5 +1,5 @@
 package com.soltel.elex.services;
 
-public class documentosService {
+public class DocumentosService {
 
 }

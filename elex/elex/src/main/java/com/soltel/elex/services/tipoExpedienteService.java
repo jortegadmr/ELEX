@@ -1,36 +1,36 @@
 package com.soltel.elex.services;
 
-import com.soltel.elex.model.tipoExpedienteModel;
+import com.soltel.elex.model.TipoExpedienteModel;
 import com.soltel.elex.repository.ITipoExpedienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class tipoExpedienteService {
+public class TipoExpedienteService {
     
     private final ITipoExpedienteRepository tipoExpedienteRepository;
 
     @Autowired
-    public tipoExpedienteService(ITipoExpedienteRepository tipoExpedienteRepository) {
+    public TipoExpedienteService(ITipoExpedienteRepository tipoExpedienteRepository) {
         this.tipoExpedienteRepository = tipoExpedienteRepository;
     }
 
-    public List<tipoExpedienteModel> getAllTipoExpedientes() {
+    public List<TipoExpedienteModel> getAllTipoExpedientes() {
         return tipoExpedienteRepository.findAll();
     }
 
-    public tipoExpedienteModel getTipoExpedienteById(Long id) {
+    public TipoExpedienteModel getTipoExpedienteById(Long id) {
         return tipoExpedienteRepository.findById(id)
                                        .orElseThrow(() -> new RuntimeException("Tipo de expediente no encontrado"));
     }
 
-    public tipoExpedienteModel createTipoExpediente(tipoExpedienteModel tipoExpediente) {
+    public TipoExpedienteModel createTipoExpediente(TipoExpedienteModel tipoExpediente) {
         return tipoExpedienteRepository.save(tipoExpediente);
     }
 
-    public tipoExpedienteModel updateTipoExpediente(Long id, tipoExpedienteModel tipoExpedienteDetails) {
-        tipoExpedienteModel tipoExpediente = tipoExpedienteRepository.findById(id)
+    public TipoExpedienteModel updateTipoExpediente(Long id, TipoExpedienteModel tipoExpedienteDetails) {
+        TipoExpedienteModel tipoExpediente = tipoExpedienteRepository.findById(id)
                                                                    .orElseThrow(() -> new RuntimeException("Tipo de expediente no encontrado"));
 
         tipoExpediente.setNombre(tipoExpedienteDetails.getNombre());
