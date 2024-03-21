@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.soltel.elex.model.ActuacionesModel;
 import com.soltel.elex.repository.IActuacionesRepository;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ActuacionesService {
@@ -20,13 +21,12 @@ public class ActuacionesService {
         return actuacionesRepository.findAll();
     }
 
-    public ActuacionesModel getActuacionById(Long id) {
-        return actuacionesRepository.findById(id)
-                                    .orElseThrow(() -> new RuntimeException("Actuación no encontrada"));
-    }
-
     public ActuacionesModel createActuacion(ActuacionesModel actuacion) {
         return actuacionesRepository.save(actuacion);
+    }
+
+    public Optional<ActuacionesModel> getActuacionById(Long id) {
+        return actuacionesRepository.findById(id);
     }
 
     public ActuacionesModel updateActuacion(Long id, ActuacionesModel actuacionDetails) {
@@ -37,7 +37,7 @@ public class ActuacionesService {
         actuacion.setFecha(actuacionDetails.getFecha());
         actuacion.setDescripcion(actuacionDetails.getDescripcion());
         actuacion.setEstado(actuacionDetails.getEstado());
-        actuacion.setExpediente(actuacionDetails.getExpediente());
+        // Actualiza otros campos según sea necesario
 
         return actuacionesRepository.save(actuacion);
     }
