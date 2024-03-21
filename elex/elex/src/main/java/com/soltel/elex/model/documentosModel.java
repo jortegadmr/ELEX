@@ -1,18 +1,20 @@
 package com.soltel.elex.model;
 
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "documentos")
 public class DocumentosModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String ruta;
 
     private String nombre;
 
@@ -20,11 +22,12 @@ public class DocumentosModel {
 
     private LocalDate fecha;
 
+    @Lob
+    private byte[] archivo;
+
+    private Long tipo;
+
     // Constructor, getters y setters
-    
-    @ManyToOne
-    @JoinColumn(name = "tipo")
-    private ActuacionesModel actuacion;
 
     public Long getId() {
         return id;
@@ -32,14 +35,6 @@ public class DocumentosModel {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getRuta() {
-        return ruta;
-    }
-
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
     }
 
     public String getNombre() {
@@ -66,15 +61,19 @@ public class DocumentosModel {
         this.fecha = fecha;
     }
 
-    public ActuacionesModel getActuacion() {
-        return actuacion;
+    public byte[] getArchivo() {
+        return archivo;
     }
 
-    public void setActuacion(ActuacionesModel actuacion) {
-        this.actuacion = actuacion;
+    public void setArchivo(byte[] archivo) {
+        this.archivo = archivo;
     }
 
-    
+    public Long getTipo() {
+        return tipo;
+    }
 
-    
+    public void setTipo(Long tipo) {
+        this.tipo = tipo;
+    }
 }
