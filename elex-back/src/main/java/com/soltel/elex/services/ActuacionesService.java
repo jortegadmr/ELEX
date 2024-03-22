@@ -13,6 +13,7 @@ public class ActuacionesService {
     private final IActuacionesRepository actuacionesRepository;
 
     @Autowired
+    
     public ActuacionesService(IActuacionesRepository actuacionesRepository) {
         this.actuacionesRepository = actuacionesRepository;
     }
