@@ -27,7 +27,7 @@ public class SecurityConfig {
             		.requestMatchers("/clientes/**", "/reservas/**").permitAll() 	// Permitir solicitudes a /clientes y /reservas
                 .anyRequest().authenticated())
             .formLogin(form -> form
-                .defaultSuccessUrl("/tipo-expediente", true));
+                .defaultSuccessUrl("/swagger-ui/index.html#/", true));
                 
         return http.build();
     }

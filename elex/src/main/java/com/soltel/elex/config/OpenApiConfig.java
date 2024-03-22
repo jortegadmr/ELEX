@@ -24,5 +24,6 @@ public class OpenApiConfig {
                         .scheme("basic")
                 )
             );
+        //.addExtension("x-logo", new Extension().url("/img/my-logo.png")) // Si deseas agregar un logotipo personalizado
     }
 }
