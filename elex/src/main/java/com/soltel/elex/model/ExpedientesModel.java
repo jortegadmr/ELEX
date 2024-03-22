@@ -13,8 +13,6 @@ public class ExpedientesModel {
 	
 	private Long id;
 	
-	private Integer expediente;
-	
 	private LocalDate fecha;
 
     private String numero;
@@ -36,8 +34,8 @@ public class ExpedientesModel {
     private String consejeria;
     
     @ManyToOne
-    @JoinColumn(name = "tipo")
-    private TipoExpedienteModel tipoExpediente;
+    @JoinColumn(name = "expediente")
+    private TipoExpedienteModel expediente;
 
 	public Long getId() {
 		return id;
@@ -45,14 +43,6 @@ public class ExpedientesModel {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Integer getExpediente() {
-		return expediente;
-	}
-
-	public void setExpediente(Integer expediente) {
-		this.expediente = expediente;
 	}
 
 	public LocalDate getFecha() {
@@ -134,6 +124,15 @@ public class ExpedientesModel {
 	public void setConsejeria(String consejeria) {
 		this.consejeria = consejeria;
 	}
-    
+
+	public TipoExpedienteModel getExpediente() {
+		return expediente;
+	}
+
+	public void setExpediente(TipoExpedienteModel expediente) {
+		this.expediente = expediente;
+	}
+
+	
     
 }

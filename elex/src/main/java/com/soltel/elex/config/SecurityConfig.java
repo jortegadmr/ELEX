@@ -19,7 +19,7 @@ import org.springframework.web.cors.CorsConfiguration;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain filtro(HttpSecurity http) throws Exception {
+    SecurityFilterChain filtro(HttpSecurity http) throws Exception {
         http
             .cors(cors -> cors.configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues()))
             .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
@@ -27,18 +27,18 @@ public class SecurityConfig {
             		.requestMatchers("/clientes/**", "/reservas/**").permitAll() 	// Permitir solicitudes a /clientes y /reservas
                 .anyRequest().authenticated())
             .formLogin(form -> form
-                .defaultSuccessUrl("/inicio", true));
+                .defaultSuccessUrl("/tipo-expediente", true));
                 
         return http.build();
     }
 
     @Bean
-    public PasswordEncoder codificador() {
+    PasswordEncoder codificador() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public UserDetailsService servicio(PasswordEncoder codificador) {
+    UserDetailsService servicio(PasswordEncoder codificador) {
         UserDetails usuarioAdmin = User.builder()
             .username("soltel")
             .password(codificador.encode("admin"))

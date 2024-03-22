@@ -3,7 +3,7 @@ package com.soltel.elex.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tipoExpediente")
+@Table(name = "tipo_expediente")
 public class TipoExpedienteModel {
 
 	@Id

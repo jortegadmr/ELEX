@@ -21,27 +21,27 @@ import com.soltel.elex.services.TipoExpedienteService;
 @RequestMapping("/tipo-expediente")
 public class TipoExpedienteController {
 	 @Autowired
-	    private TipoExpedienteService servicioTipo;
+	    private TipoExpedienteService tipoExpedienteService;
 
 	    @GetMapping("/consultar")
-	    public List<TipoExpedienteModel> dameTiposExpediente() {
-	        return servicioTipo.consultarTipos();
+	    public List<TipoExpedienteModel> consultarTiposExpediente() {
+	        return tipoExpedienteService.consultarTipos();
 	    }
 
-	    @PostMapping("/insertar/{materia}")
-	    public TipoExpedienteModel insertarTipo(@PathVariable String materia) {
+	    @PostMapping("/insertar/{nombre}")
+	    public TipoExpedienteModel insertarTipo(@PathVariable String nombre) {
 	    	TipoExpedienteModel tipo = new TipoExpedienteModel();
-	        tipo.setNombre(materia);
-	        return servicioTipo.insertarTipo(tipo);
+	        tipo.setNombre(nombre);
+	        return tipoExpedienteService.insertarTipo(tipo);
 	    }
 
-	    @PutMapping("/actualizar/{id}/{materia}")
-	    public ResponseEntity<?> actualizarTipo(@PathVariable int id, @PathVariable String materia) {
-	        Optional<TipoExpedienteModel> tipo = servicioTipo.obtenerTipoPorId(id);
+	    @PutMapping("/actualizar/{id}/{nombre}")
+	    public ResponseEntity<?> actualizarTipo(@PathVariable int id, @PathVariable String nombre) {
+	        Optional<TipoExpedienteModel> tipo = tipoExpedienteService.obtenerTipoPorId(id);
 	        if (tipo.isPresent()) {
 	        	TipoExpedienteModel tipoActualizado = tipo.get();
-	            tipoActualizado.setNombre(materia);
-	            TipoExpedienteModel guardaTipo = servicioTipo.actualizarTipo(tipoActualizado);
+	            tipoActualizado.setNombre(nombre);
+	            TipoExpedienteModel guardaTipo = tipoExpedienteService.actualizarTipo(tipoActualizado);
 	            return ResponseEntity.ok(guardaTipo);
 	        } else {
 	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tipo no encontrado");
@@ -51,9 +51,9 @@ public class TipoExpedienteController {
 	    
 	    @DeleteMapping("/borrar/{id}")
 	    public ResponseEntity<Void> borrarTipo(@PathVariable int id) {
-	        return servicioTipo.obtenerTipoPorId(id)
+	        return tipoExpedienteService.obtenerTipoPorId(id)
 	                .map(tipo -> {
-	                    servicioTipo.borrarTipo(id);
+	                	tipoExpedienteService.borrarTipo(id);
 	                    return ResponseEntity.ok().<Void>build();
 	                })
 	                .orElseGet(() -> ResponseEntity.notFound().build());

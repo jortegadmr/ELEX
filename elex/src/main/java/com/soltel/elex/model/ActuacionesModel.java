@@ -21,7 +21,7 @@ public class ActuacionesModel {
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "codigoExpediente")
+    @JoinColumn(name = "codigo_expediente")
     private ExpedientesModel expediente;
 
 	public Long getId() {

@@ -12,7 +12,7 @@ USE elex;
 
 -- Tabla tipoExpediente
 
-CREATE TABLE IF NOT EXISTS tipoExpediente (
+CREATE TABLE IF NOT EXISTS tipo_expediente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS expedientes (
     descripcion TEXT,
     condicion ENUM('confidencial', 'urgente', 'en seguimiento'),
     precio DECIMAL(10, 2),
-    consejeria VARCHAR(100)
+    consejeria VARCHAR(100),
+    FOREIGN KEY (expediente) REFERENCES tipo_expediente(id)
 );
 
 -- Tabla Actuaciones
@@ -42,18 +43,18 @@ CREATE TABLE IF NOT EXISTS actuaciones (
     fecha DATE,
     descripcion TEXT,
     estado BOOLEAN DEFAULT 1,
-    codigoExpediente INT,
-    FOREIGN KEY (codigoExpediente) REFERENCES expedientes(id)
+    codigo_expediente INT,
+    FOREIGN KEY (codigo_expediente) REFERENCES expedientes(id)
 );
 
 -- Tabla Documentos
 
 CREATE TABLE IF NOT EXISTS documentos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    ruta VARCHAR(255),
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
     fecha DATE,
+    archivo BLOB,
     tipo INT,
     FOREIGN KEY (tipo) REFERENCES actuaciones(id)
 );
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS documentos (
 
 -- INSERTAMOS VALORES
 
-INSERT INTO tipoExpediente (nombre)
+INSERT INTO tipo_expediente (nombre)
 VALUES
         ('ASI'),
         ('INF'),
@@ -84,7 +85,7 @@ VALUES
     (2, '2024-02-10', '0010-2024-0-2748-PD-PA-01', 'PATRIMONIO', 'Elena Gomez', 'Maria Lopez', 'urgente', 70, 'Cultura y Patrimonio Histórico', 'Valoración de patrimonio cultural para protección y conservación.');
 
 
-INSERT INTO  actuaciones (nombre, fecha, descripcion, codigoExpediente)
+INSERT INTO  actuaciones (nombre, fecha, descripcion, codigo_expediente)
 VALUES
 
 	-- codigo expediente 2
@@ -128,4 +129,10 @@ VALUES
     ('Informes', '2024-10-10', 'Preparación y presentación de informes técnicos o periciales relevantes para el caso.', 8),
     ('Resoluciones judiciales', '2024-10-15', 'Emisión de resoluciones por parte del tribunal para resolver disputas legales.', 8);
         
+        
+INSERT INTO documentos (nombre, fecha, descripcion, tipo)
+VALUES
+	('Documento Notificacion', '2023-05-15',  'Notificación de acciones legales a las partes involucradas en el caso.', 9),
+    ('Citacion y emplazamiento', '2023-05-15',  'Citación oficial y emplazamiento a las partes para comparecer ante el tribunal.', 10);
+
  select * from actuaciones;

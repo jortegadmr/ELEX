@@ -21,7 +21,7 @@ public class DocumentosModel {
     private byte[] archivo;
 
     @ManyToOne
-    @JoinColumn(name = "tipo")
+    @JoinColumn(name = "id_actuacion")
     private ActuacionesModel actuacion;
 
 	public Long getId() {
