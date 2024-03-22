@@ -21,8 +21,8 @@ public class DocumentosModel {
     private byte[] archivo;
 
     @ManyToOne
-    @JoinColumn(name = "id_actuacion")
-    private ActuacionesModel actuacion;
+    @JoinColumn(name = "tipo")
+    private ActuacionesModel tipo;
 
 	public Long getId() {
 		return id;
@@ -64,13 +64,14 @@ public class DocumentosModel {
 		this.archivo = archivo;
 	}
 
-	public ActuacionesModel getActuacion() {
-		return actuacion;
+	public ActuacionesModel getTipo() {
+		return tipo;
 	}
 
-	public void setActuacion(ActuacionesModel actuacion) {
-		this.actuacion = actuacion;
+	public void setTipo(ActuacionesModel tipo) {
+		this.tipo = tipo;
 	}
-    
+
+	
     
 }

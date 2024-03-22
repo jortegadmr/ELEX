@@ -17,6 +17,10 @@ public class TipoExpedienteService {
         return repository.findAll();
     }
 
+    public Optional<TipoExpedienteModel> obtenerTipoPorId(int id) {
+        return repository.findById(id);
+    }
+    
     public TipoExpedienteModel insertarTipo(TipoExpedienteModel tipo) {
         return repository.save(tipo);
     }
@@ -29,7 +33,5 @@ public class TipoExpedienteService {
         repository.deleteById(id);
     }
 
-    public Optional<TipoExpedienteModel> obtenerTipoPorId(int id) {
-        return repository.findById(id);
-    }
+    
 }
