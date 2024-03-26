@@ -12,9 +12,9 @@ export default class HomeComponent {
 
 
 toggleMenu() {
-  const ocultar = document.querySelector('.ocultar');
-  if (ocultar) {
-    ocultar.classList.toggle('active');
-  }
+  const ocultarElements = document.querySelectorAll('.ocultar');
+  ocultarElements.forEach(element => {
+    element.classList.toggle('active');
+  });
 }
 }

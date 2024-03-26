@@ -1,12 +1,9 @@
+/* ----------------MENU LATERAL--------------------- */
+
 .menu-text {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .menu-text {
-        display: none;
-    }
-}
 .sidebar {
     position: fixed;
     top: 0;
@@ -16,32 +13,28 @@
     z-index: 1000;
     padding: 20px; /* Espaciado opcional */
     background-color: rgb(86, 93, 103);
-    /* display: none; */
-}
-.ocultar {
-     display: none;
 }
 
-.ocultar.active {
-  display: block;
+.nav-item {
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 10px; /* Espacio entre elementos */
 }
-  
+
+.nav-link {
+  display: flex;
+  align-items: baseline;
+  /* justify-content: center; */
+  height: 100%;
+  padding: 10px;
+}
+
+.nav-link i {
+  margin-top: 20px;
+  font-size: 24px; /* Tamaño deseado para los iconos */
+}
   .sidebar-content {
     width: 100%;
-  }
-  
-  .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra horizontalmente */
-    height: 100%;
-    padding: 10px;
-  }
-  
-  .nav-link i {
-    margin-right: 10px; /* Espaciado entre el icono y el texto */
-    margin-top: 20px;
-    font-size: 24px; /* Tamaño deseado para los iconos */
   }
   
   .icon{
@@ -52,3 +45,25 @@
     color: aliceblue; /* Color deseado para los iconos */
     margin-bottom: 40px;
   }
+  
+  .icon-column {
+    margin-right: 20px; /* Espacio entre el icono y el texto */
+    display: flex;
+    align-items: center; /* Alinea verticalmente los iconos */
+  }
+  
+  .text-column {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los textos */
+  }
+  
+  .ocultar {
+    display: none;
+    text-align: right;
+  }
+  
+  .ocultar.active {
+    display: block;
+    color: aliceblue;
+  }
+  
