@@ -1,0 +1,46 @@
+.menu-text {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .menu-text {
+        display: none;
+    }
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto; /* Cambia esto a un valor fijo si deseas un ancho específico */
+    z-index: 1000;
+    padding: 20px; /* Espaciado opcional */
+    background-color: rgb(86, 93, 103);
+  }
+  
+  .sidebar-content {
+    width: 100%;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .nav-link i {
+    margin-right: 10px; /* Espaciado entre el icono y el texto */
+    margin-top: 20px;
+    font-size: 24px; /* Tamaño deseado para los iconos */
+  }
+  
+  .icon{
+    color: aliceblue; /* Color deseado para los iconos */
+  }
+
+  .bars{
+    color: aliceblue; /* Color deseado para los iconos */
+    margin-bottom: 40px;
+  }

@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export default class HomeComponent {
-
+// Método para alternar la visibilidad del menú
+  toggleMenu(section: string) {
+    const menu = document.getElementById(`menu-${section}`);
+    if (menu) {
+      if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+      } else {
+        menu.classList.add('show');
+      }
+    }
+  }
 }

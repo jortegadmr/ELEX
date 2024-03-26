@@ -1,19 +1,50 @@
-<div class="container">
-    <div class="sidebar">
-      <h2>Menú</h2>
-      <ul class ="nav">
-        <li><a routerLink="/">Página Principal</a></li>
-        <li><a routerLink="/expedientes">Expedientes</a></li>
-        <li><a routerLink="/actuaciones">Actuaciones</a></li>
-        <li><a routerLink="/tipos-expedientes">Tipos de Expedientes</a></li>
-        <li><a routerLink="/documentos">Documentos</a></li>
-        <li><a routerLink="/endpoints">Endpoints</a></li>
+<nav class="sidebar">
+    <div class="sidebar-content">
+      <ul class="nav flex-column">
+        <!-- Enlaces del menú -->
+        <!-- Expandir -->
+        <li class="nav-item">
+            <a class="nav-link active" (click)="toggleMenu('menu')">
+              <i class="fas fa-bars bars"></i>
+            </a>
+          </li>
+        <!-- HOME -->
+        <li class="nav-item">
+          <a class="nav-link active">
+            <i class="fas fa-home icon"></i>
+          </a>
+        </li>
+        <!-- EXPEDIENTES -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fas fa-folder icon"></i>
+          </a>
+        </li>
+        <!-- ACTUACIONES -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fas fa-tasks icon"></i>
+          </a>
+        </li>
+        <!-- TIPO EXPEDIENTE -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fas fa-archive icon"></i>
+          </a>
+        </li>
+        <!-- DOCUMENTOS -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fas fa-file-alt icon"></i>
+          </a>
+        </li>
+        <!-- ENDPOINTS -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fas fa-code icon"></i>
+          </a>
+        </li>
       </ul>
     </div>
-  
-    <div class="content">
-      <!-- Aquí se cargarán los componentes correspondientes a las rutas -->
-     <!-- <router-outlet></router-outlet> -->
-    </div>
-  </div>
+  </nav>
   
