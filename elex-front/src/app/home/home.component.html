@@ -1,47 +1,53 @@
 <nav class="sidebar">
     <div class="sidebar-content">
       <ul class="nav flex-column">
-        <!-- Enlaces del menú -->
         <!-- Expandir -->
         <li class="nav-item">
-            <a class="nav-link active" (click)="toggleMenu('menu')">
-              <i class="fas fa-bars bars"></i>
-            </a>
-          </li>
+            <a class="nav-link" (click)="toggleMenu()"> <!-- pulsar para abrir el menu -->
+            <i class="fas fa-bars bars"></i>
+        
+          </a>
+        </li>
         <!-- HOME -->
         <li class="nav-item">
-          <a class="nav-link active">
+          <a class="nav-link ">
             <i class="fas fa-home icon"></i>
+            <span class="ocultar">Escritorio</span>
           </a>
         </li>
         <!-- EXPEDIENTES -->
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link ">
             <i class="fas fa-folder icon"></i>
+            <span class="ocultar">Expedientes</span>
           </a>
         </li>
         <!-- ACTUACIONES -->
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link ">
             <i class="fas fa-tasks icon"></i>
+            <span class="ocultar">Actuaciones</span>
           </a>
         </li>
         <!-- TIPO EXPEDIENTE -->
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link ">
             <i class="fas fa-archive icon"></i>
+            <span class="ocultar">Tipo Expediente</span>
           </a>
         </li>
         <!-- DOCUMENTOS -->
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link ">
             <i class="fas fa-file-alt icon"></i>
+            <span class="ocultar">Documentos</span>
           </a>
         </li>
         <!-- ENDPOINTS -->
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link ">
             <i class="fas fa-code icon"></i>
+            <span class="ocultar">Endpoints</span>
           </a>
         </li>
       </ul>

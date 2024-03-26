@@ -16,7 +16,15 @@
     z-index: 1000;
     padding: 20px; /* Espaciado opcional */
     background-color: rgb(86, 93, 103);
-  }
+    /* display: none; */
+}
+.ocultar {
+     display: none;
+}
+
+.ocultar.active {
+  display: block;
+}
   
   .sidebar-content {
     width: 100%;
