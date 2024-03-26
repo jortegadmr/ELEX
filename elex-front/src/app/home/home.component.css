@@ -19,6 +19,7 @@
   display: flex;
   /* align-items: center; */
   margin-bottom: 10px; /* Espacio entre elementos */
+  cursor: pointer;
 }
 
 .nav-link {

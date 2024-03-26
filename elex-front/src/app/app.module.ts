@@ -1,18 +1,15 @@
-// app.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes),
-    AppComponent
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
+export class AppModule { }

@@ -1,7 +1,7 @@
 
-<nav class="sidebar">
+<nav class="sidebar" >
     <div class="sidebar-content">
-      <ul class="nav flex-column">
+      <ul class="nav flex-column ">
         <!-- Expandir -->
         <li class="nav-item">
             <a class="nav-link" (click)="toggleMenu()"> <!-- pulsar para abrir el menu -->
@@ -11,8 +11,8 @@
         </li>
         <!-- HOME -->
         <li class="nav-item">
-          <a class="nav-link">
-            <div class="icon-column">
+          <a class="nav-link ">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-home icon"></i>
             </div>
             <div class="text-column">
@@ -22,8 +22,8 @@
         </li>
         <!-- EXPEDIENTES -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="/expedientes" routerLinkActive="active">
-            <div class="icon-column">
+          <a class="nav-link" routerLink="expedientes" routerLinkActive="active">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-folder icon"></i>
             </div>
             <div class="text-column">
@@ -34,10 +34,10 @@
         <!-- ACTUACIONES -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/actuaciones" routerLinkActive="active">
-            <div class="icon-column">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-tasks icon"></i>
             </div>
-            <div class="text-column">
+            <div class="text-column" (click)="toggleMenu()">
               <span class="ocultar">Actuaciones</span>
             </div>
           </a>
@@ -45,7 +45,7 @@
         <!-- TIPO EXPEDIENTE -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/tipos-expedientes" routerLinkActive="active">
-            <div class="icon-column">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-archive icon"></i>
             </div>
             <div class="text-column">
@@ -56,7 +56,7 @@
         <!-- DOCUMENTOS -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/documentos" routerLinkActive="active">
-            <div class="icon-column">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-file-alt icon"></i>
             </div>
             <div class="text-column">
@@ -67,7 +67,7 @@
         <!-- ENDPOINTS -->
         <li class="nav-item">
           <a class="nav-link">
-            <div class="icon-column">
+            <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-code icon"></i>
             </div>
             <div class="text-column">

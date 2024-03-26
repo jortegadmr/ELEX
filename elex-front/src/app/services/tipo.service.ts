@@ -11,7 +11,5 @@ export class TipoService {
   list() {
     return this.http.get('http://localhost:8008/tipo-expediente/consultar');
   }
-  get(id: number) {
-    return this.http.get('http://localhost:8008/tipo-expediente/consultar/${id}');
-  }
+
 }
