@@ -25,6 +25,9 @@ export default class HomeComponent {
 
   userLoginOn: boolean = false;
 
+
+  // LOGIN formulario
+
   loginForm = this.formBuilder.group({
     username: ['soltel'],
     password: ['admin'],
