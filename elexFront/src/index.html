@@ -9,5 +9,111 @@
 </head>
 <body>
   <app-root></app-root>
+  <!-- NAVEGACION-MENU LATERAL -->
+
+
+<nav class="sidebar" >
+  <div class="sidebar-content">
+    <ul class="nav flex-column ">
+      <!-- Expandir -->
+      <li class="nav-item">
+          <a class="nav-link" (click)="toggleMenu()"> <!-- pulsar para abrir el menu -->
+          <i class="fas fa-bars bars"></i>
+      
+        </a>
+      </li>
+      <!-- HOME -->
+      <li class="nav-item">
+        <a class="nav-link ">
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-home icon"></i>
+          </div>
+          <div class="text-column" routerLink="" routerLinkActive="active">
+            <span class="ocultar">Escritorio</span>
+          </div>
+        </a>
+      </li>
+      <!-- EXPEDIENTES -->
+      <li class="nav-item">
+        <a class="nav-link" >
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-folder icon"></i>
+          </div>
+          <div class="text-column" routerLink="/expedientes" routerLinkActive="active">
+            <span class="ocultar">Expedientes</span>
+          </div>
+        </a>
+      </li>
+      <!-- ACTUACIONES -->
+      <li class="nav-item">
+        <a class="nav-link" >
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-tasks icon"></i>
+          </div>
+          <div class="text-column" routerLink="/actuaciones" routerLinkActive="active">
+            <span class="ocultar">Actuaciones</span>
+          </div>
+        </a>
+      </li>
+      <!-- TIPO EXPEDIENTE -->
+      <li class="nav-item">
+        <a class="nav-link" >
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-archive icon"></i>
+          </div>
+          <div class="text-column" routerLink="/tipos-expedientes" routerLinkActive="active">
+            <span class="ocultar">Tipo Expediente</span>
+          </div>
+        </a>
+      </li>
+      <!-- DOCUMENTOS -->
+      <li class="nav-item">
+        <a class="nav-link" >
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-file-alt icon"></i>
+          </div>
+          <div class="text-column" routerLink="/documentos" routerLinkActive="active">
+            <span class="ocultar">Documentos</span>
+          </div>
+        </a>
+      </li>
+      <!-- ENDPOINTS -->
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="icon-column" (click)="toggleMenu()">
+            <i class="fas fa-code icon"></i>
+          </div>
+          <div class="text-column">
+            <span class="ocultar">Endpoints</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BARRA SUPERIOR -->
+
+<div class="top-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>LICTOR</p>
+      </div>
+      <div class="col">
+        <p>FONDO EUROPEO DE DESARROLLO</p>
+      </div>
+      <div class="col">
+      <!--  <button (click)="logout()">Cerrar sesión</button>  BOTON CERRAR SESION -->
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <p>¡BIENVENIDO A LICTOR, PABLO MANUEL SALAS TRIGO! </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
