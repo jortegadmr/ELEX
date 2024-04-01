@@ -1,0 +1,69 @@
+/* ----------------MENU LATERAL--------------------- */
+
+.menu-text {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto; /* Cambia esto a un valor fijo si deseas un ancho específico */
+    z-index: 1000;
+    padding: 20px; /* Espaciado opcional */
+    background-color: rgb(86, 93, 103);
+}
+
+.nav-item {
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 10px; /* Espacio entre elementos */
+  cursor: pointer;
+}
+
+.nav-link {
+  display: flex;
+  align-items: baseline;
+  /* justify-content: center; */
+  height: 100%;
+  padding: 10px;
+}
+
+.nav-link i {
+  margin-top: 20px;
+  font-size: 24px; /* Tamaño deseado para los iconos */
+}
+  .sidebar-content {
+    width: 100%;
+  }
+  
+  .icon{
+    color: aliceblue; /* Color deseado para los iconos */
+  }
+
+  .bars{
+    color: aliceblue; /* Color deseado para los iconos */
+    margin-bottom: 40px;
+  }
+  
+  .icon-column {
+    margin-right: 20px; /* Espacio entre el icono y el texto */
+    display: flex;
+    align-items: center; /* Alinea verticalmente los iconos */
+  }
+  
+  .text-column {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los textos */
+  }
+  
+  .ocultar {
+    display: none;
+    text-align: right;
+  }
+  
+  .ocultar.active {
+    display: block;
+    color: aliceblue;
+  }
