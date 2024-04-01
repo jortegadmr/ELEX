@@ -54,7 +54,7 @@
 		</dependency>
 	</dependencies>
 
-	<!-- JWT -->
+	<!-- JWT 
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
@@ -81,7 +81,7 @@
 		<artifactId>jjwt-jackson</artifactId>
 		<version>0.11.2</version>
 		<scope>runtime</scope>
-	</dependency>
+	</dependency> -->
 
 
 	<build>
