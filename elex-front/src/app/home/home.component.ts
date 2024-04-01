@@ -1,7 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -29,11 +29,23 @@ export default class HomeComponent {
   // LOGIN formulario
 
   loginForm = this.formBuilder.group({
-    username: ['soltel'],
-    password: ['admin'],
+    username: ['soltel', [Validators.required]],
+    password: ['admin', [Validators.required]],
   })
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
+
+  login() {
+    if (this.loginForm.valid) {
+      
+      console.log("Lllamar al servicio de login");
+      this.loginForm.reset();
+     /*  this.userLoginOn = true; */
+    }
+    else {
+      alert("Los campos no pueden estar vacíos");
+    }
   }
+}
