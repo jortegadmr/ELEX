@@ -1,0 +1,16 @@
+<form>
+    <div class="mb-4 text-center">
+      <label for="exampleInputUser" class="form-label mb-2">Usuario</label>
+      <input formControlName="username" type="user" class="form-control" id="exampleInputUser" aria-describedby="userHelp">
+      <div id="userHelp" class="form-text">Ej: soltel</div>
+      
+    </div>
+    <div class="mb-4 text-center">
+      <label for="exampleInputPassword1" class="form-label mb-2">Contraseña</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp">
+      <div id="passwordHelp" class="form-text">Ej: admin</div>
+      
+    </div>
+    <!-- Deshabilita el botón si el formulario no es válido -->
+    <button type="submit" class="btn btn-primary d-block mx-auto">Iniciar Sesión</button>
+  </form>

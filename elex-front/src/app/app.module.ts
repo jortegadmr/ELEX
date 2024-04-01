@@ -4,6 +4,7 @@ import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     BrowserModule
 
   ],
