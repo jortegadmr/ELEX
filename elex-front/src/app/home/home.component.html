@@ -1,4 +1,15 @@
 
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>LICTOR</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<!-- <router-outlet></router-outlet> -->
 <nav class="sidebar" >
     <div class="sidebar-content">
       <ul class="nav flex-column ">
@@ -22,7 +33,7 @@
         </li>
         <!-- EXPEDIENTES -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="expedientes" routerLinkActive="active">
+          <a class="nav-link" routerLink="/expedientes" routerLinkActive="active">
             <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-folder icon"></i>
             </div>
@@ -37,7 +48,7 @@
             <div class="icon-column" (click)="toggleMenu()">
               <i class="fas fa-tasks icon"></i>
             </div>
-            <div class="text-column" (click)="toggleMenu()">
+            <div class="text-column">
               <span class="ocultar">Actuaciones</span>
             </div>
           </a>
@@ -78,4 +89,5 @@
       </ul>
     </div>
   </nav>
-  
+</body>
+</html>
