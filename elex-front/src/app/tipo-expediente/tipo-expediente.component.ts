@@ -22,11 +22,12 @@ export default class TipoExpedienteComponent implements OnInit {
     });
   }
 
-    private contactService = inject(TipoService);
+    private tipoService = inject(TipoService);
 
     ngOnInit(): void {
-        this.tipoService = this.contactService
+        this.tipoService.list()
+        .subscribe()
     }
-    }
+    
 
 }

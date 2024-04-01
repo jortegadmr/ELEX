@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 
 import java.util.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/expedientes")
 public class ExpedientesController {

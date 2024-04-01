@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.soltel.elex.model.ActuacionesModel;
 import java.util.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/actuaciones")
 public class ActuacionesController {
