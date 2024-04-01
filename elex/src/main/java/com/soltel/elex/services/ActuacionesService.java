@@ -1,6 +1,6 @@
 package com.soltel.elex.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.soltel.elex.model.ActuacionesModel;
 import com.soltel.elex.repository.IActuacionesRepository;
@@ -12,7 +12,7 @@ public class ActuacionesService {
     
     private final IActuacionesRepository actuacionesRepository;
 
-    @Autowired
+    //@Autowired
     
     public ActuacionesService(IActuacionesRepository actuacionesRepository) {
         this.actuacionesRepository = actuacionesRepository;
