@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.soltel.elex.model.TipoExpedienteModel;
 import com.soltel.elex.services.TipoExpedienteService;
 
-@CrossOrigin
+@CrossOrigin (origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/tipo-expediente")
 public class TipoExpedienteController {
