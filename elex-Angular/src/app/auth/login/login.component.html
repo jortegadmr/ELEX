@@ -5,16 +5,17 @@
           <div class="card bg-dark text-white" style="border-radius: 1rem;">
   
             <!-- FORMULARIO -->
-            <form>
+
+            <form [formGroup]="loginForm">
               <div class="form-group">
                 
-                <input type="email" class="form-control" id="usernameForm" aria-describedby="usernameHelp" placeholder="Usuario">
+                <input type="email" class="form-control" aria-describedby="usernameHelp" placeholder="Usuario" formControlName="username">
                 <small id="usernameHelp" class="form-text text-muted">Ej: soltel</small>
               </div>
   
               <div class="form-group">
                
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
                 <small id="passwordHelp" class="form-text text-muted">Ej: admin</small>
               </div>
                
