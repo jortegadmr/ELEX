@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser, faCode, faBars, faHome, faFolder, faTasks, faArchive, faFileAlt  } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +13,7 @@ import { faUser, faCode, faBars, faHome, faFolder, faTasks, faArchive, faFileAlt
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterLink,
     FontAwesomeModule,
   ],
 
@@ -21,7 +22,7 @@ import { faUser, faCode, faBars, faHome, faFolder, faTasks, faArchive, faFileAlt
 })
 export class NavComponent {
 
-  userLoginOn: boolean = false;
+  userLoginOn: boolean = true;
 
   /* ICONOS FONTAWESOME  */
   faUser = faUser;

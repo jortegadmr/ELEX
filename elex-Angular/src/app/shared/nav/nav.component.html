@@ -3,7 +3,7 @@
     @if (userLoginOn) {
         <ul>
             <li>
-                <a href="#">
+                <a routerLink="inicio">
                     <fa-icon [icon]="faHome"></fa-icon>
                     <span>Escritorio</span>
                     
@@ -62,3 +62,4 @@
     }
     
 </nav>
+<router-outlet></router-outlet>

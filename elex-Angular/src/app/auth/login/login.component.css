@@ -1,0 +1,14 @@
+.vh-50 {
+    height: 50vh;
+  }
+
+  form{
+    padding: 30px;
+    margin: 30px;
+  }
+
+  .form-group, .form-btn{
+    padding: 15px;
+    margin: 15px;
+    justify-content: center;
+  }
