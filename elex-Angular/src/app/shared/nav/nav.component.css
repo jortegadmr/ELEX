@@ -24,32 +24,27 @@ nav{
 }
 
 a{
-    position: relative;
+    
     color: aliceblue;
     font-size: 16px;
-    display: table;
+    display: block;
     width: 300px;
-    padding: 14px;
-    bottom: 14px;
     text-decoration: none;
-}
-
-fa-icon{
-    position: relative;
-    width: 70px;
-    height: 40px;
-    top: 14px;
-    bottom: 14px;
-    font-size: 30px;
-    text-align: left;
+    padding: 25px;
     
 }
 
+fa-icon{
+    
+    width: 70px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+
+}
+
 span{
-    position: relative;
-    top: 12px;
-    bottom: 14px;
-    margin-left: 40px;
+    margin-left: 45px;
 
 }
 
