@@ -5,6 +5,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { NavComponent } from './shared/nav/nav.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
     CommonModule,
     HeaderComponent,
     DashboardComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NavComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
