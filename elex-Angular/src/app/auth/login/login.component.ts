@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, FormGroup, Validators } 
 import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/auth/login.service';
+import { LoginRequest } from '../../services/auth/loginRequest';
 
 
 
@@ -16,6 +17,7 @@ import { LoginService } from '../../services/auth/login.service';
     RouterOutlet,
     CommonModule,
     
+    
   ],
 
   templateUrl: './login.component.html',
@@ -23,6 +25,7 @@ import { LoginService } from '../../services/auth/login.service';
 })
 
 export class LoginComponent {
+  
 
   ngOnInit(): void {}
   
@@ -30,7 +33,7 @@ export class LoginComponent {
     username: ['', Validators.required],
     password: ['', Validators.required]
   });
-  constructor(private formBuilder: FormBuilder, private router: Router, loginService: LoginService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) {}
 
   get username(){
     return this.loginForm.get('username');
@@ -40,7 +43,7 @@ export class LoginComponent {
   }
   login(){
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value);
+      this.loginService.login(this.loginForm.value as LoginRequest)
       this.router.navigate(['inicio']);
       this.loginForm.reset();
     }

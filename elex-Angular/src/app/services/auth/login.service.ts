@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LoginRequest } from './loginRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class LoginService {
 
   constructor() { }
 
-  login(credentials: any) {
+  login(credentials: LoginRequest) {
     console.log(credentials);
   }
 }
