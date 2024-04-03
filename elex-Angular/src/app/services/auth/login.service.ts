@@ -13,7 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(credentials: LoginRequest): Observable<any> {
-    return this.http.get('././assets/data.json').pipe(
+    return this.http.post<any>('http://localhost:8008/login', credentials).pipe(
       // Emplear la función de manejo de errores de RxJS
       catchError(this.handleError)
     )
