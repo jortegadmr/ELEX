@@ -3,6 +3,7 @@ package com.soltel.elex.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -14,6 +15,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 
+
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -24,7 +27,8 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues()))
             .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
             .authorizeHttpRequests(auth -> auth
-            		.requestMatchers("/login/**").permitAll()
+            .requestMatchers(HttpMethod.POST, "/login").permitAll()
+            .requestMatchers( "/login").permitAll() // Permitir solicitudes POST a /login sin autenticación
                 .anyRequest().authenticated())
             .formLogin(form -> form
                 .defaultSuccessUrl("/swagger-ui/index.html#/", true));
