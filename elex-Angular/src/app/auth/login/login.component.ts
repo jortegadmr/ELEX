@@ -26,7 +26,7 @@ import { LoginRequest } from '../../services/auth/loginRequest';
 
 export class LoginComponent {
   
-
+  loginError: string='';
   ngOnInit(): void {}
   
   loginForm = this.formBuilder.group({
@@ -43,9 +43,23 @@ export class LoginComponent {
   }
   login(){
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value as LoginRequest)
-      this.router.navigate(['inicio']);
-      this.loginForm.reset();
+      this.loginService.login(this.loginForm.value as LoginRequest).subscribe({
+        next: (userData) => {
+          console.log(userData);
+        },
+        error: (errorData) => {
+          console.log(errorData);
+          this.loginError=errorData;
+
+        },
+        complete: () => {
+          console.log('Login completado');
+          this.router.navigate(['inicio']);
+          this.loginForm.reset();
+        }
+      });
+
+      
     }
     else {
       this.loginForm.markAllAsTouched();

@@ -1,0 +1,8 @@
+{
+    "message":"Hello, World!",
+    "id":1,
+    "name":"John",
+    "lastName":"Doe",
+    "age":30,
+    "email":"johndoe@example.com"
+}
