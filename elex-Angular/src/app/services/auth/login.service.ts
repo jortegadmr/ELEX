@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(credentials: LoginRequest): Observable<any> {
-    return this.http.get('././assets/dta.json').pipe(
+    return this.http.get('././assets/data.json').pipe(
       // Emplear la función de manejo de errores de RxJS
       catchError(this.handleError)
     )
