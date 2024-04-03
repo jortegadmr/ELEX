@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { LoginRequest } from './loginRequest';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError, Observable, catchError } from 'rxjs';
+import { throwError, Observable, catchError, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+
+  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +21,7 @@ export class LoginService {
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
-      // Errora de lado del lado del cliente.
+      // Error de lado del lado del cliente.
       console.error('Se ha producido un error:', error.error);
     } else {
       // El backend devolvio un error
