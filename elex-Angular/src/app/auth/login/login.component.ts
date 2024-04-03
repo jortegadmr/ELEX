@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoginService } from '../../services/auth/login.service';
+
 
 
 @Component({
@@ -12,7 +14,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     RouterLink,
     RouterOutlet,
-    CommonModule
+    CommonModule,
+    
   ],
 
   templateUrl: './login.component.html',
@@ -27,7 +30,7 @@ export class LoginComponent {
     username: ['', Validators.required],
     password: ['', Validators.required]
   });
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, loginService: LoginService) {}
 
   get username(){
     return this.loginForm.get('username');
@@ -37,7 +40,7 @@ export class LoginComponent {
   }
   login(){
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      this.loginService.login(this.loginForm.value);
       this.router.navigate(['inicio']);
       this.loginForm.reset();
     }
