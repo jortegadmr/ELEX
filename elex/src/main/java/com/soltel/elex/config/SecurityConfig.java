@@ -24,7 +24,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues()))
             .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
             .authorizeHttpRequests(auth -> auth
-            		.requestMatchers("/clientes/**", "/reservas/**").permitAll()
+            		.requestMatchers("/login/**").permitAll()
                 .anyRequest().authenticated())
             .formLogin(form -> form
                 .defaultSuccessUrl("/swagger-ui/index.html#/", true));
