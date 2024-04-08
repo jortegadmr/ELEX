@@ -10,6 +10,18 @@ CREATE DATABASE IF NOT EXISTS elex
 
 USE elex;
 
+-- Tabla User
+
+CREATE TABLE IF NOT EXISTS user (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(64) NOT NULL,
+  password VARCHAR(64),
+  role ENUM('ADMIN', 'USER') NOT NULL,
+  UNIQUE (username)
+);
+
+
+
 -- Tabla tipoExpediente
 
 CREATE TABLE IF NOT EXISTS tipo_expediente (
@@ -61,7 +73,10 @@ CREATE TABLE IF NOT EXISTS documentos (
 
 
 -- INSERTAMOS VALORES
+INSERT INTO user (username, password)
+VALUES ('soltel', '$2a$10$4S3vjMt4xSMsUK9AlX1qPOecQiSxr/2WqjsL9YMIOf42MRVraMgoe');
 
+        
 INSERT INTO tipo_expediente (nombre)
 VALUES
         ('ASI'),
